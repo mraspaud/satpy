@@ -17,6 +17,8 @@
 # satpy.  If not, see <http://www.gnu.org/licenses/>.
 """Nodes to build trees."""
 
+import six
+
 from satpy import DatasetDict, DatasetID, DATASET_KEYS
 from satpy.readers import TooManyResults
 from satpy.utils import get_logger
@@ -469,7 +471,18 @@ class DependencyTree(Node):
             # assume that there is no such thing as a "better" composite
             # version so if we find any DatasetIDs already loaded then
             # we want to use them
-            node = self[dataset_key]
+            try:
+                ds_dict = dataset_key.to_dict()
+            except AttributeError:
+                if isinstance(dataset_key, six.text_type):
+                    ds_dict = {'name': dataset_key}
+                elif isinstance(dataset_key, float):
+                    ds_dict = {'wavelength': dataset_key}
+            clean_filter = {key: value for key, value in dfilter.items() if value is not None}
+            ds_dict.update(clean_filter)
+            dsid = DatasetID.from_dict(ds_dict)
+
+            node = self[dsid]
             LOG.trace("Composite already loaded:\n\tRequested: {}\n\tFound: {}".format(dataset_key, node.name))
             return node, set()
         except KeyError:
