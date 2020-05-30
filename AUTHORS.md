@@ -51,3 +51,4 @@ The following people have made contributions to this project:
 - [oananicola (oananicola)](https://github.com/oananicola)
 - [praerien (praerien)](https://github.com/praerien)
 - [Xin Zhang (zxdawn)](https://github.com/zxdawn)
+- [Taiga Tsukada (tsukada-cs)](https://github.com/tsukada-cs)
