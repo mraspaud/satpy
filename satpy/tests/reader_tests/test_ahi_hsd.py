@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License along with
 # satpy.  If not, see <http://www.gnu.org/licenses/>.
-"""The abi_l1b reader tests package.
+"""The ahi_hsd reader tests package.
 """
 
 import unittest
@@ -71,9 +71,10 @@ class TestAHIHSDNavigation(unittest.TestCase):
                             'spare': ''}
 
             area_def = fh.get_area_def(None)
-            self.assertEqual(area_def.proj_dict, {'a': 6378137.0, 'b': 6356752.3,
-                                                  'h': 35785863.0, 'lon_0': 140.7,
-                                                  'proj': 'geos', 'units': 'm'})
+            self.assertEqual(area_def.proj_dict, {'proj': 'geos', 'lon_0': 140.7,
+                                                  'h': 35785863.0, 'x_0': 0, 'y_0': 0,
+                                                  'a': 6378137.0, 'b': 6356752.3, 'units': 'm',
+                                                  'no_defs': None, 'type': 'crs'})
 
             self.assertEqual(area_def.area_extent, (592000.0038256244, 4132000.026701824,
                                                     1592000.0102878278, 5132000.033164027))
@@ -113,9 +114,10 @@ class TestAHIHSDNavigation(unittest.TestCase):
                             'spare': ''}
 
             area_def = fh.get_area_def(None)
-            self.assertEqual(area_def.proj_dict, {'a': 6378137.0, 'b': 6356752.3,
-                                                  'h': 35785863.0, 'lon_0': 140.7,
-                                                  'proj': 'geos', 'units': 'm'})
+            self.assertEqual(area_def.proj_dict, {'proj': 'geos', 'lon_0': 140.7,
+                                                  'h': 35785863.0, 'x_0': 0, 'y_0': 0,
+                                                  'a': 6378137.0, 'b': 6356752.3, 'units': 'm',
+                                                  'no_defs': None, 'type': 'crs'})
 
             self.assertEqual(area_def.area_extent, (-5500000.035542117, -3300000.021325271,
                                                     5500000.035542117, -2200000.0142168473))
@@ -164,10 +166,12 @@ class TestAHIHSDFileHandler(unittest.TestCase):
                             'number_of_lines': 1100,
                             'spare': ''}
             fh.basic_info = {
+                'observation_area': np.array(['FLDK']),
                 'observation_start_time': np.array([58413.12523839]),
                 'observation_end_time': np.array([58413.12562439]),
                 'observation_timeline': np.array([300]),
             }
+            fh.observation_area = np2str(fh.basic_info['observation_area'])
 
             self.fh = fh
 
