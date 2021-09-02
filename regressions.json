@@ -1,1 +1,1 @@
-{"regressions": [["seviri_hrit_benchmarks.SEVIRIHRIT.time_load_one_channel", "graphs/arch-x86_64/branch-main/cpu-Intel(R) Xeon(R) Gold 6161 CPU @ 2.20GHz/machine-miles.pytroll.ewc/num_cpu-8/os-Linux 4.15.0-65-generic/python-3.8/ram-16GB/seviri_hrit_benchmarks.SEVIRIHRIT.time_load_one_channel.json", {}, null, 2.336755672469735, 2.191608556546271, [[null, 8806, 2.191608556546271, 2.336755672469735]]]]}
+{"regressions": []}
