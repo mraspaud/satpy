@@ -1,1 +1,1 @@
-{"regressions": [["fci_benchmarks.FCI.peakmem_load_resample_save('all', 'natural_color_raw', 'nearest')", "graphs/arch-x86_64/branch-main/cpu-Intel(R) Xeon(R) Gold 6161 CPU @ 2.20GHz/machine-miles.pytroll.ewc/num_cpu-8/os-Linux 4.15.0-65-generic/python-3.8/ram-16GB/fci_benchmarks.FCI.peakmem_load_resample_save.json", {}, 9, 5199540224.0, 4814049280.0, [[null, 9327, 4814049280.0, 5154537472.0]]]]}
+{"regressions": []}
