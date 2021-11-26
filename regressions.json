@@ -1,1 +1,1 @@
-{"regressions": [["abi_l1b_benchmarks.ABIL1B.time_load_true_color", "graphs/arch-x86_64/branch-main/cpu-Intel(R) Xeon(R) Gold 6161 CPU @ 2.20GHz/machine-miles.pytroll.ewc/num_cpu-8/os-Linux 4.15.0-65-generic/python-3.8/ram-16GB/abi_l1b_benchmarks.ABIL1B.time_load_true_color.json", {}, null, 43.27077159192413, 39.64558390062302, [[null, 9496, 40.014537401497364, 43.27077159192413]]]]}
+{"regressions": []}
